@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Keyboard of Love - For My Princess 👑</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .keyboard-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            width: 100%;
+            animation: slideUp 0.8s ease;
+        }
+
+        .keyboard-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .key {
+            position: relative;
+            min-width: 50px;
+            min-height: 50px;
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            border: none;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow:
+                4px 4px 8px rgba(0, 0, 0, 0.2),
+                -2px -2px 8px rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+        }
+
+        .key:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow:
+                6px 6px 20px rgba(0, 0, 0, 0.3),
+                -3px -3px 15px rgba(255, 255, 255, 0.2),
+                0 0 20px rgba(255, 107, 157, 0.4);
+            background: linear-gradient(145deg, #ff6b9d, #ff8fab);
+            color: white;
+            animation: keyPress 0.3s ease;
+        }
+
+        @keyframes keyPress {
+            0% {
+                transform: translateY(-5px) scale(1);
+            }
+
+            50% {
+                transform: translateY(-7px) scale(1.12);
+            }
+
+            100% {
+                transform: translateY(-5px) scale(1.1);
+            }
+        }
+
+        .key:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+
+        /* Special F Letter Design */
+
+
+        .key-f {
+            background: linear-gradient(145deg, #ff6b9d, #ff8fab) !important;
+            color: white !important;
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            overflow: visible;
+            box-shadow:
+                0 0 20px rgba(255, 107, 157, 0.6),
+                4px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .key-f::before {
+            content: '👑';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 1rem;
+            animation: bounce 2s infinite;
+            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
+        }
+
+        .key-f::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            animation: shine 3s infinite;
+        }
+
+        .key-f:hover {
+            background: linear-gradient(145deg, #c44569, #ff6b9d) !important;
+            transform: translateY(-8px) scale(1.15) rotate(5deg);
+            box-shadow:
+                0 0 30px rgba(255, 107, 157, 1),
+                0 10px 40px rgba(255, 107, 157, 0.5);
+        }
+
+        /* Special H Letter Design */
+
+
+        .key-h {
+            background: linear-gradient(145deg, #ff6b9d, #ff8fab) !important;
+            color: white !important;
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            overflow: visible;
+            box-shadow:
+                0 0 20px rgba(255, 107, 157, 0.6),
+                4px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .key-h::before {
+            content: '👑';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 1rem;
+            animation: bounce 2s infinite;
+            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
+        }
+
+        .key-h::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            animation: shine 3s infinite;
+        }
+
+        .key-f:hover {
+            background: linear-gradient(145deg, #c44569, #ff6b9d) !important;
+            transform: translateY(-8px) scale(1.15) rotate(5deg);
+            box-shadow:
+                0 0 30px rgba(255, 107, 157, 1),
+                0 10px 40px rgba(255, 107, 157, 0.5);
+        }
+
+        /* Space bar */
+        .key-space {
+            flex: 1;
+            margin-top: 18px;
+            min-width: 120px;
+            background: linear-gradient(145deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        /* Space bar hover effect */
+        .key-space:hover {
+            background: linear-gradient(145deg, #ff6b9d, #ff8fab);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(255, 107, 157, 0.45);
+            color: #fff;
+        }
+ 
+
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            bottom: calc(100% + 15px);
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 1.2rem 1.5rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            max-width: 320px;
+            white-space: normal;
+            text-align: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.5);
+            z-index: 1000;
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+            font-size: 1rem;
+            line-height: 1.5;
+            font-weight: bold;
+
+        }
+
+        .tooltip::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 10px solid transparent;
+            border-top-color: #c44569;
+            filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+        }
+
+        .tooltip::after {
+            content: '✨';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 1.5rem;
+            animation: sparkle 1s infinite;
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2) rotate(180deg);
+            }
+        }
+
+        .key:hover .tooltip {
+            transform: translateX(-50%) scale(1) rotate(-2deg);
+            opacity: 1;
+            animation: tooltipBounce 0.5s ease;
+        }
+
+        @keyframes tooltipBounce {
+            0% {
+                transform: translateX(-50%) scale(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateX(-50%) scale(1.1) rotate(-3deg);
+            }
+
+            100% {
+                transform: translateX(-50%) scale(1) rotate(-2deg);
+            }
+        }
+
+        /* Display Area */
+        .display-area {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 240, 255, 0.95));
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            min-height: 120px;
+            box-shadow:
+                inset 0 2px 10px rgba(0, 0, 0, 0.1),
+                0 5px 20px rgba(102, 126, 234, 0.2);
+            border: 3px solid rgba(255, 107, 157, 0.3);
+        }
+
+        .display-text {
+            font-family: 'Playfair Display', serif;
+
+            font-size: 1.5rem;
+            font-weight: 360;
+            color: #000000;
+            text-align: center;
+            line-height: 1.6;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 0.3px;
+
+        }
+
+        .display-text.typing {
+            animation: textGlow 1s ease infinite;
+        }
+
+        @keyframes textGlow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                transform: scale(1);
+            }
+
+            50% {
+                text-shadow: 0 0 15px rgba(255, 107, 157, 0.4);
+                transform: scale(1.02);
+            }
+        }
+
+        .clear-btn {
+            margin-top: 1rem;
+            padding: 0.6rem 2rem;
+            background: linear-gradient(145deg, #ff6b9d, #c44569);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+        }
+
+        .clear-btn:hover {
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.5);
+            background: linear-gradient(145deg, #c44569, #ff6b9d);
+        }
+
+        .clear-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes shine {
+            to {
+                left: 100%;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header p {
+                font-size: 0.9rem;
+            }
+
+            .keyboard-container {
+                padding: 1.5rem 1rem;
+            }
+
+            .key {
+                min-width: 40px;
+                min-height: 40px;
+                font-size: 1rem;
+            }
+
+            .key-f {
+                font-size: 1.2rem;
+            }
+
+            .keyboard-row {
+                gap: 0.3rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .tooltip {
+                max-width: 220px;
+                font-size: 0.95rem;
+                padding: 1rem 1.2rem;
+                white-space: normal;
+                word-wrap: break-word;
+            }
+
+            .display-text {
+                font-size: 1.2rem;
+            }
+
+            .display-area {
+                min-height: 100px;
+                padding: 1rem;
+            }
+        }
+
+        /* Tablet Responsive */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .keyboard-container {
+                max-width: 750px;
+                padding: 2rem 1.5rem;
+            }
+
+            .key {
+                min-width: 60px;
+                min-height: 60px;
+                font-size: 1.3rem;
+            }
+
+            .key-f {
+                font-size: 1.6rem;
+            }
+
+            .keyboard-row {
+                gap: 0.6rem;
+            }
+
+            .tooltip {
+                max-width: 350px;
+                font-size: 1.1rem;
+                padding: 1.3rem 1.8rem;
+            }
+
+            .display-text {
+                font-size: 1.6rem;
+            }
+
+            .display-area {
+                min-height: 130px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .key {
+                min-width: 32px;
+                min-height: 32px;
+                font-size: 0.85rem;
+            }
+
+            .key-f {
+                font-size: 1rem;
+            }
+
+
+            .keyboard-row {
+                gap: 0.25rem;
+            }
+
+            .tooltip {
+                font-size: 0.9rem;
+                padding: 0.7rem 1rem;
+                max-width: 200px;
+            }
+
+            .display-text {
+                font-size: 1rem;
+            }
+        }
+
+        /* New Advanced Features */
+        .keyboard-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff6b9d, #667eea, #764ba2, #ff6b9d);
+            background-size: 400%;
+            border-radius: 22px;
+            z-index: -1;
+            animation: gradientMove 8s ease infinite;
+        }
+
+        @keyframes gradientMove {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .key::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .key:hover::before {
+            opacity: 1;
+        }
+
+        /* Sound wave effect on typing */
+        @keyframes soundWave {
+
+            0%,
+            100% {
+                transform: scaleY(1);
+            }
+
+            50% {
+                transform: scaleY(1.5);
+            }
+        }
+
+        .sound-bar {
+            position: absolute;
+            bottom: 5px;
+            width: 3px;
+            height: 10px;
+            background: rgba(255, 107, 157, 0.6);
+            border-radius: 3px;
+            animation: soundWave 0.5s ease infinite;
+        }
+
+        .sound-bar:nth-child(1) {
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .sound-bar:nth-child(2) {
+            left: 40%;
+            animation-delay: 0.1s;
+        }
+
+        .sound-bar:nth-child(3) {
+            left: 60%;
+            animation-delay: 0.2s;
+        }
+
+        .sound-bar:nth-child(4) {
+            left: 80%;
+            animation-delay: 0.3s;
+        }
+
+        /* Particle effect on key press */
+        .particle {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #ff6b9d, #c44569);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleFloat 1s ease-out forwards;
+            z-index: 10000;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(var(--tx), var(--ty)) scale(0);
+            }
+        }
+
+        /* Ripple effect on key press */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 107, 157, 0.4);
+            transform: scale(0);
+            animation: rippleEffect 0.6s ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes rippleEffect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Hearts Animation */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0;
+            animation: floatUp 4s ease-in-out;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="header">
+        <h1>😅 Hassan ka Keyboard 😅</h1>
+        <p>Every key you press carries my love to you 🥰</p>
+
+    </div>
+
+    <div class="keyboard-container">
+        <div class="display-area">
+            <div class="display-text" id="displayText">Every letter here is for you, My Butterfly 🦋 🦋</div>
+            <button class="clear-btn" onclick="clearDisplay()">
+                <span>Erase</span>
+            </button>
+        </div>
+
+        <div class="keyboard-row">
+            <button class="key" onclick="typeKey('Q')">
+                Q <span class="tooltip">Queen of my heart and my life 👑</span>
+            </button>
+            <button class="key" onclick="typeKey('W')">
+                W <span class="tooltip">World feels perfect when you're around 🌎</span>
+            </button>
+            <button class="key" onclick="typeKey('E')">
+                E <span class="tooltip">Every day starts with a thought of you ☀️</span>
+            </button>
+            <button class="key" onclick="typeKey('R')">
+                R <span class="tooltip">Reasons to love you are endless ❤️</span>
+            </button>
+            <button class="key" onclick="typeKey('T')">
+                T <span class="tooltip">Thank you for coming into my life and making it beautiful ✨</span>
+            </button>
+            <button class="key" onclick="typeKey('Y')">
+                Y <span class="tooltip">You are my favorite person, always 🌸</span>
+            </button>
+            <button class="key" onclick="typeKey('U')">
+                U <span class="tooltip">Under every sky, my heart chooses you 🌙</span>
+            </button>
+            <button class="key" onclick="typeKey('I')">
+                I <span class="tooltip">I found my forever when I found you ♾️</span>
+            </button>
+            <button class="key" onclick="typeKey('O')">
+                O <span class="tooltip">Only you can make me smile like this 😊</span>
+            </button>
+            <button class="key" onclick="typeKey('P')">
+                P <span class="tooltip">Princess, you deserve the whole world 👸</span>
+            </button>
+        </div>
+
+        <!-- Row 2 - ASDF Row -->
+        <div class="keyboard-row">
+            <button class="key" onclick="typeKey('A')">
+                A <span class="tooltip">Always my first and last thought 💭</span>
+            </button>
+            <button class="key" onclick="typeKey('S')">
+                S <span class="tooltip">Someone special, and that is you 🥰</span>
+            </button>
+            <button class="key" onclick="typeKey('D')">
+                D <span class="tooltip">Days are brighter with your smile ☀️</span>
+            </button>
+            <button class="key key-f" onclick="typeKey('F')">
+                F
+                <span class="tooltip">
+                    Fiza (The woman written in my destiny)😍
+                </span>
+            </button>
+            <button class="key" onclick="typeKey('G')">
+                G <span class="tooltip">Glad that our paths crossed 🛣️</span>
+            </button>
+            <button class="key key-h" onclick="typeKey('H')">
+                H <span class="tooltip">Hassan will always love you more than anyone 🙂</span>
+
+            </button>
+            <button class="key" onclick="typeKey('J')">
+                J <span class="tooltip">Just want to see you happy always 😊</span>
+            </button>
+            <button class="key" onclick="typeKey('K')">
+                K <span class="tooltip">Kind soul with a beautiful heart ✨</span>
+            </button>
+            <button class="key" onclick="typeKey('L')">
+                L <span class="tooltip">Life feels like a dream with you ☁️</span>
+            </button>
+        </div>
+        <!-- Row 3 -->
+        <div class="keyboard-row">
+            <button class="key" onclick="typeKey('Z')">
+                Z <span class="tooltip">Zero percent chance I'll ever leave you 🤝</span>
+            </button>
+            <button class="key" onclick="typeKey('X')">
+                X <span class="tooltip">Xtra love for everything you do 💖</span>
+            </button>
+            <button class="key" onclick="typeKey('C')">
+                C <span class="tooltip">Can’t imagine a future without you 🌹</span>
+            </button>
+            <button class="key" onclick="typeKey('V')">
+                V <span class="tooltip">Very special and rare soul you have ✨</span>
+            </button>
+            <button class="key" onclick="typeKey('B')">
+                B <span class="tooltip">Best part of my day is you 🌙</span>
+            </button>
+            <button class="key" onclick="typeKey('N')">
+                N <span class="tooltip">No one makes me feel like you do 🚫</span>
+            </button>
+            <button class="key" onclick="typeKey('M')">
+                M <span class="tooltip">My heart chose you, again and again 💫</span>
+            </button>
+        </div>
+        <!-- Row 4 - Space bar -->
+        <div class="keyboard-row">
+            <button class="key key-space" onclick="typeKey(' ')">
+                SPACE
+                <span class="tooltip">Every space in my life is filled with you 💖</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let displayText = document.getElementById('displayText');
+        let currentText = '';
+
+        function typeKey(key) {
+            if (currentText === 'Type something beautiful for her... 💕') {
+                currentText = '';
+            }
+            currentText += key;
+            displayText.textContent = currentText || 'Type something beautiful for her... 💕';
+            displayText.classList.add('typing');
+
+            setTimeout(() => {
+                displayText.classList.remove('typing');
+            }, 500);
+
+            // Create floating heart
+            createFloatingHeart();
+
+            // Create particles on key press
+            createParticles(event);
+
+            // Special animation for F key
+            if (key === 'F') {
+                createMultipleHearts();
+                // Add special effect
+                displayText.style.color = '#ff6b9d';
+                displayText.style.fontWeight = '700';
+                setTimeout(() => {
+                    displayText.style.color = '#000000';
+                    displayText.style.fontWeight = '360';
+                }, 1000);
+            }
+        }
+
+        function createParticles(e) {
+            if (!e || !e.target) return;
+
+            const rect = e.target.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            for (let i = 0; i < 6; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+
+                const angle = (Math.PI * 2 * i) / 6;
+                const velocity = 50 + Math.random() * 50;
+                const tx = Math.cos(angle) * velocity;
+                const ty = Math.sin(angle) * velocity;
+
+                particle.style.left = centerX + 'px';
+                particle.style.top = centerY + 'px';
+                particle.style.setProperty('--tx', tx + 'px');
+                particle.style.setProperty('--ty', ty + 'px');
+
+                document.body.appendChild(particle);
+
+                setTimeout(() => particle.remove(), 1000);
+            }
+        }
+
+        // Add ripple effect on key click
+        document.querySelectorAll('.key').forEach(key => {
+            key.addEventListener('click', function (e) {
+                const ripple = document.createElement('span');
+                ripple.className = 'ripple';
+
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = e.clientX - rect.left - size / 2 + 'px';
+                ripple.style.top = e.clientY - rect.top - size / 2 + 'px';
+
+                this.appendChild(ripple);
+
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        function clearDisplay() {
+            currentText = '';
+            displayText.textContent = 'Every space in my life is filled with you 💖';
+        }
+
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.textContent = '💖';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.top = '100%';
+
+            document.getElementById('floatingHearts').appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+
+        function createMultipleHearts() {
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    createFloatingHeart();
+                }, i * 100);
+            }
+        }
+
+        // Princess button functionality
+        const princessBtn = document.querySelector('.princess-btn');
+        if (princessBtn) {
+            princessBtn.addEventListener('click', function () {
+                displayText.textContent = 'You are my Princess forever! 👑💖';
+                createMultipleHearts();
+            });
+        }
+
+        // Keyboard support
+        document.addEventListener('keydown', function (e) {
+
+            // ✅ BACKSPACE
+            if (e.key === 'Backspace') {
+                e.preventDefault();
+                currentText = currentText.slice(0, -1);
+                displayText.textContent = currentText || 'Type something beautiful for her... 💕';
+                return;
+            }
+
+            // ✅ CTRL + A (Allow select all)
+            if (e.ctrlKey && e.key.toLowerCase() === 'a') {
+                return; // browser ko allow karo
+            }
+
+            // ✅ CTRL + C (Allow copy)
+            if (e.ctrlKey && e.key.toLowerCase() === 'c') {
+                return; // browser ko allow karo
+            }
+
+            // ✅ NORMAL TYPING
+            if (/^[a-zA-Z ]$/.test(e.key)) {
+                e.preventDefault();
+                typeKey(e.key, e);
+            }
+        });
+
+        // Random hearts animation on load
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                createFloatingHeart();
+            }
+        }, 2000);
+
+    </script>
+</body>
+
+</html>
